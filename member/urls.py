@@ -10,7 +10,7 @@ from . import views
 urlpatterns = [
     path("index/", views.index, name="index"),  # member/index   ---> views.index :service method
     path("join/", views.join, name="join"), 
-    
+    path("login/", views.login, name="login"), 
     
     ]
 
