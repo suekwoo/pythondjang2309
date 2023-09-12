@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
+{% extends "head.html" %} {# 한줄주석#}
+ {% block content  %} 
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +9,8 @@
 <body>
 
 	<form class="w3-container" 
-	action="${pageContext.request.contextPath}/member/memberDeletePro" method="post">
+	action="/member/delete/{{ request.session.id }}/" method="post">
+	  {%  csrf_token  %}  {# !   꼭 해야함  #}
 		<p>
 			<label>비밀번호</label> <input class="w3-input" type="password"
 				name="pass">
@@ -22,3 +22,4 @@
 
 </body>
 </html>
+{% endblock %}

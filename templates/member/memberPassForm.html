@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
+{% extends "head.html" %} {# 한줄주석#}
+ {% block content  %} 
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,9 +22,10 @@ function passChk(form) {
 </script>
 <body>
 	
-	<form class="w3-container" action="${pageContext.request.contextPath}/member/memberPassPro" method="post"
+	<form class="w3-container" action="/member/passchg/" method="post"
 	onsubmit="return passChk(this)"
 	>
+	  {%  csrf_token  %}  {# !   꼭 해야함  #}
 			<p>
 			<label>현재 비밀번호</label> 
 			<input class="w3-input" type="password" 	name="pass">
@@ -44,3 +44,4 @@ function passChk(form) {
 	
 </body>
 </html>
+{% endblock content  %} 

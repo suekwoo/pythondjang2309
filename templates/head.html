@@ -10,9 +10,9 @@
 <div class="w3-bar w3-light-grey">
     <a href="/member/index" class="w3-bar-item w3-button w3-green">KIC Campus</a>
   {%  if request.session.id   %}  {# 제어문 ,명령문 #}
-        <a href="/member/info" class="w3-bar-item w3-button w3-hide-small">
+        <a href="/member/info/{{ request.session.id }}/" class="w3-bar-item w3-button w3-hide-small">
          회원정보확인[{{ request.session.id }}]</a>
-        <a href="/member/logout" class="w3-bar-item w3-button w3-hide-small">로그아웃</a>
+        <a href="/member/logout/" class="w3-bar-item w3-button w3-hide-small">로그아웃</a>
   {% else %}
  
     <a href="/member/join" class="w3-bar-item w3-button w3-hide-small">회원가입</a>
@@ -24,7 +24,7 @@
 
  {%  if request.session.id == 'admin'  %}
  
-  <a href="/member/list" class="w3-bar-item w3-button w3-hide-small">회원리스트</a>
+  <a href="/member/list/" class="w3-bar-item w3-button w3-hide-small">회원리스트</a>
 
   {% endif %} 
   
